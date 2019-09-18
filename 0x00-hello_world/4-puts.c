@@ -1,6 +1,4 @@
-#!/bin/bash
 #include <stdio.h>
-
 /**
  * main - prints exactly
  *
