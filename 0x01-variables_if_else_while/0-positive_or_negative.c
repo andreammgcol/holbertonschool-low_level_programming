@@ -8,20 +8,20 @@
  */
 int main(void)
 {
-  int n;
-  srand(time(0));
-  n = rand() - RAND_MAX / 2;
-  if (n > o)
-    {
-      printf("%i is positive\n", n);
-    }
-  {
- else (n == 0)
-	printf("%i is zero\n", n)
-	}
-  if (n < o)
-    {
-      printf("%i is negative\n", n);
-    }
-  return (0);
- }
+int n;
+srand(time(0));
+n = rand() - RAND_MAX / 2;
+if (n > o)
+{
+printf("%i is positive\n", n);
+}
+{
+else (n == 0)
+printf("%i is zero\n", n);
+}
+if (n < o)
+{
+printf("%i is negative\n", n);
+}
+return (0);
+}
