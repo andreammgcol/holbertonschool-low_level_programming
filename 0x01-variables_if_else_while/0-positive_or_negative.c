@@ -16,7 +16,11 @@ if (n > o)
 printf("%i is positive\n", n);
 }
 {
-else (n == 0)
+else
+{
+(n == 0)
+}
+{
 printf("%i is zero\n", n);
 }
 if (n < o)
