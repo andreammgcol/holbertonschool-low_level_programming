@@ -15,16 +15,13 @@ if (n < o)
 {
 printf("%i is negative\n", n);
 }
-else
-{
-(n == 0)
+else (n == 0)
 {
 printf("%i is zero\n", n);
 }
-else
+else (n > 0)
 {
 printf("%i is positive\n", n);
-}
 }
 return (0);
 }
