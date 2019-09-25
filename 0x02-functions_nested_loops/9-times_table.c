@@ -17,8 +17,11 @@ for (j = 0; j <= 9; j++)
 mult = count *j;
 if (mult <= 9)
 {
+if (j != 0)
+{
 _putchar(' ');
 _putchar(' ');
+}
 _putchar(mult + '0');
 }
 else
