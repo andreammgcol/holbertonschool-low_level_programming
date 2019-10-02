@@ -10,7 +10,7 @@ int tam = 0;
 int j = 0;
 int i;
 int x;
-char m[tam];
+char m[] = "Holberton";
 
 while (s[tam] != '\0')
 {
@@ -23,7 +23,7 @@ m[j] = s[i];
 j++;
 }
 
-for(x =0; x < tam; x++)
+for (x = 0; x < tam; x++)
 {
 s[x] = m[x];
 }
