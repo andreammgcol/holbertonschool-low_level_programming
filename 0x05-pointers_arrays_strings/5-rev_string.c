@@ -10,7 +10,7 @@ int tam = 0;
 int j = 0;
 int i;
 int x;
-char m[] = "Holberton";
+char m[] = "          ";
 
 while (s[tam] != '\0')
 {
