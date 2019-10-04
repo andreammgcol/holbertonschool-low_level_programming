@@ -8,17 +8,15 @@
 */
 void reverse_array(int *a, int n)
 {
-	int tempo[n];
-	int i;
-	int j = 0;
+int i, j, k;
 
-	for (i = n - 1; i >= 0; i--)
+	j = 0;
+	k = n - 1;
+	for (i = 0; i < n / 2; i++)
 	{
-	tempo[j] = a[i];
-	j++;
+	j = a[k];
+	a[k] = a[i];
+	a[i] = j;
+	k--;
 	}
-
-	for (j = 0; j < n; j++)
-	{
-	a[j] = tempo[j];
 }
