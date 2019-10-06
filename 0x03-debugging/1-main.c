@@ -11,9 +11,9 @@ int main(void)
 
 	printf("Infinite loop incoming :(\n");
 
-	i = 0; /* i must be equals to 10 */
+	i = 0;
 
-	while (i < 10)
+	while (i < 10) /* condition should be i > 10  */
 	{
 		putchar(i);
 	}
