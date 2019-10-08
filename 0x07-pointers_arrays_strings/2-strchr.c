@@ -20,8 +20,6 @@ char *_strchr(char *s, char c)
 		}
 		i++;
 	}
-	i = i + 1;
-	s = s + i;
-	return (s);
+	return ('\0');
 
 }
