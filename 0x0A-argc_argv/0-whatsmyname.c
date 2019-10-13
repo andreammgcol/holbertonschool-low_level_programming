@@ -1,19 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+#define UNUSED(argc) (void)(argc)
+
 /**
 * main - entry point
-* @argc: int argument count
-* @argv: char argument
-* Description: program that prints its name, followed by a new line
+* @argc: int
+* @argv: char
+* Description: program that prints its name
 * Return: Always 0
 */
 
 int main(int argc, char *argv[])
 {
-	int x;
+	UNUSED(argc);
 
-	for (x = 0; x < argc; x++)
-	{
-		printf("%s\n", argv[x]);
-	}
+		printf("%s\n", *argv);
+
 	return (0);
 }
