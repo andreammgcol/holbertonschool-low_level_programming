@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 /**
 * main - that prints its name
 * @argc: int argument count
@@ -8,13 +8,6 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
-
-	while (argv[argc - 1][i] != '\0')
-	{
-		_putchar(argv[argc - 1][i]);
-		i++;
-	}
-	_putchar('\n');
+	printf("%s \n", argv[argc - 1]);
 	return (0);
 }
