@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define UNUSED(argc) (void)(argc)
 
 /**
 * main - entry point
@@ -12,9 +10,12 @@
 
 int main(int argc, char *argv[])
 {
-	UNUSED(argc);
+	int i;
 
-		printf("%s\n", *argv);
-
+	while (i < argc)
+	{
+		printf("%s\n", argv[i]);
+		i++;
+	}
 	return (0);
 }
