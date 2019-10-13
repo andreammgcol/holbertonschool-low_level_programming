@@ -1,19 +1,19 @@
 #include <stdio.h>
 /**
-* main - that prints its name
+* main - entry point
 * @argc: int argument count
 * @argv: char argument
-* Return: 0
+* Description: program that prints its name, followed by a new line
+* Return: Always 0
 */
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int x;
 
-	while (i < argc)
+	for (x = 0; x < argc; x++)
 	{
-		printf("%s\n", argv[i]);
-		i++;
+		printf("%s\n", argv[x]);
 	}
 	return (0);
 }
