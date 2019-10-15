@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
-* main - entry point that prints the minimum number of coins
+* *create_array - hat creates an array of chars
 * @size: unsigned int
 * @c: variable type char
 * Return: pointer
