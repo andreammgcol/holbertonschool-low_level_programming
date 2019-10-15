@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
-* *create_array - hat creates an array of chars
+* *create_array - that creates an array of chars
 * @size: unsigned int
 * @c: variable type char
 * Return: pointer
