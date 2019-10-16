@@ -29,7 +29,7 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 	tams2 = j;
-	size = tams1 + tams2;
+	size = tams1 + tams2 + 1;
 
 	s3 = malloc(size * sizeof(char));
 	i = 0, j = 0;
