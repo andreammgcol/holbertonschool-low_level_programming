@@ -10,42 +10,39 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-char *s3;
-unsigned int len1 = 0, len2 = 0, i, j, k = 0;
+	char *s3;
+	unsigned int i = 0, j = 0, len, k, l = 0;
 
-if (s1 == NULL)
-	s1 = "";
-if (s2 == NULL)
-	s2 = "";
-while (s1[len1] != '\0')
-	len1++;
-while (s2[len2] != '\0')
-	len2++;
-
-if (n <= len2)
-	k = len1 + n + 1;
-else
-	k = len1 + len2 + 1;
-
-s3 = malloc(sizeof(char) * k);
-
-if (s3 == NULL)
-	return (NULL);
-for (i = 0; s1[i] != '\0'; i++)
-{
-	s3[i] = s1[i];
-}
-
-for (j = 0; s2[j] != '\0'; j++)
-{
-	if (n >= len2)
-		s3[i + j] = s2[j];
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	if (n >= j)
+	{
+		k = i + j + 1;
+		n = j;
+		s3 = malloc(sizeof(char) * k);
+	}
 	else
 	{
-		if (j < n)
-			s3[i + j] = s2[j];
+		k = i + n + 1;
+		s3 = malloc(sizeof(char) * k);
 	}
+	if (s3 == NULL)
+		return (NULL);
+	for (len = 0; len < i; len++)
+		s3[len] = s1[len];
+	l = len;
+	for (len = 0; len < n; len++)
+	{
+		s3[l] = s2[len];
+		l++;
+	}
+	s3[l] = '\0';
+	return (s3);
 }
-s3[i + j] = '\0';
-return (s3);
-}
+
