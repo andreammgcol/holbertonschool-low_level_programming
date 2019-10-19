@@ -18,18 +18,19 @@ if (s1 == NULL)
 if (s2 == NULL)
 	s2 = "";
 while (s1[len1] != '\0')
-{
 	len1++;
-}
 while (s2[len2] != '\0')
-{
 	len2++;
-}
-k = len1 + len2 + 1;
+
+if (n <= len2)
+	k = len1 + n + 1;
+else
+	k = len1 + len2 + 1;
+
 s3 = malloc(sizeof(char) * k);
+
 if (s3 == NULL)
 	return (NULL);
-
 for (i = 0; s1[i] != '\0'; i++)
 {
 	s3[i] = s1[i];
