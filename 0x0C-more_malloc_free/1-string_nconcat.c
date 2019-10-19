@@ -41,7 +41,7 @@ for (j = 0; s2[j] != '\0'; j++)
 		s3[i + j] = s2[j];
 	else
 	{
-		if (j <= n)
+		if (j < n)
 			s3[i + j] = s2[j];
 	}
 }
