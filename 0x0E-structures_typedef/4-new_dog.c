@@ -19,23 +19,25 @@ int _strlen(char *s)
 }
 
 /**
-* *_strcpy - that copies the string pointed
+* *_strncpy - that copies a string
 * @dest: variable 1
 * @src: variable 2
+* @n: variable bytes
 * Return: dest
 */
-
-char *_strcpy(char *dest, char *src)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0;
+int i;
 
-	while (src[i] != '\0')
-	{
-	dest[i] = src[i];
-	i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+for (i = 0; i < n && src[i] != '\0'; i++)
+{
+dest[i] = src[i];
+}
+for (; i < n; i++)
+{
+dest[i] = '\0';
+}
+return (dest);
 }
 
 /**
@@ -75,8 +77,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	new_dog->name = _strcpy(new_dog->name, name);
-	new_dog->name = _strcpy(new_dog->owner, owner);
+	new_dog->name = _strncpy(new_dog->name, name, len1 + 1);
+	new_dog->name = _strncpy(new_dog->owner, owner, len2 + 1);
 	new_dog->age = age;
 
 	return (new_dog);
