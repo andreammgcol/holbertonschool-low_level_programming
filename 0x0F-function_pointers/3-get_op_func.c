@@ -3,11 +3,10 @@
 #include "3-calc.h"
 
 /**
-* int_index - that searches for an integer
-* @array: variable pointer
-* @size: size of array
-* @cmp: pointer a function
-* Return: the index of the first element for which the cmp
+* *get_op_func - contain the function that selects the correct function
+* @s: variable pointer
+*
+* Return: NULL
 */
 
 int (*get_op_func(char *s))(int, int)
@@ -31,6 +30,5 @@ int (*get_op_func(char *s))(int, int)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
