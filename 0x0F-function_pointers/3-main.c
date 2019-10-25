@@ -12,32 +12,38 @@
 
 int main(int argc, char *argv[])
 {
-	char *op;
-	char op2;
-	int a, b, res;
+char *op;
+char op2;
+int a, b, res;
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+if (argc != 4)
+{
+	printf("Error\n");
+	exit(98);
+}
 
-	op = argv[2];
-	op2 = *argv[2]; 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+op = argv[2];
+op2 = *argv[2];
+a = atoi(argv[1]);
+b = atoi(argv[3]);
 
-	if (op2 != 43 && op2 != 45 && op2 != 37 && op2 != 47 && op2 != 42 && op2 != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
+if (op2 != 43 && op2 != 45 && op2 != 37 && op2 != 47 && op2 != 42)
+{
+	printf("Error\n");
+	exit(99);
+}
 
-	res = (*get_op_func(op))(a, b);
+if ((op2 == 47 || op2 == 37) && b == 0)
+{
+	printf("Error\n");
+	exit(100);
+}
 
-	printf("%d\n", res);
+res = (*get_op_func(op))(a, b);
+
+printf("%d\n", res);
 
 
-	return (res);
+return (res);
 }
 
