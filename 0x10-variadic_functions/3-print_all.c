@@ -3,29 +3,28 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
-
-void imp_char()
+void imp_char(va_list imp)
 {
-	printf("%c",c);
+	printf("%c", va_arg(imp, char));
 }
 
-void imp_int()
+void imp_int(va_list imp)
 {
-	printf("%d",i);
+	printf("%d", va_arg(imp, char));
 }
 
-void imp_float()
+void imp_float(va_list imp)
 {
-	printf("%f",f);
+	printf("%f", (float)va_arg(imp, double));
 }
 
-void *imp_char()
+void *imp_char(va_list imp)
 {
 	/*if (s == NULL)
 	{
 		printf("nil");
 	}*/
-	printf("%c",s);
+	printf("%c", (char)va_arg(imp, string));
 }
 
 ft ar[] = {
@@ -38,7 +37,6 @@ ft ar[] = {
 void print_all(const char * const format, ...)
 {
 	int cont1 = 0, cont2 = 0;
-	char st;
 
 	va_list imp;
 	va_start(imp, format);
@@ -55,7 +53,5 @@ void print_all(const char * const format, ...)
 		}
 		cont1++;
 	}
-
-st = va_arg(imp, const);
 
 }
