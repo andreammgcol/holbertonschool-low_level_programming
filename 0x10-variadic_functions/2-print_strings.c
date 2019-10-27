@@ -27,10 +27,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (tmp == NULL)
 		{
-			if (i == n)
-				printf("(nil)");
-			else
-				printf("(nil)%s", separator);
+			printf("(nil)");
 		}
 		else if (i < n)
 		{
