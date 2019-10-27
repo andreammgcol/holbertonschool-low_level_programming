@@ -3,55 +3,66 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
-void imp_char(va_list imp)
-{
-	printf("%c", va_arg(imp, char));
-}
-
-void imp_int(va_list imp)
-{
-	printf("%d", va_arg(imp, char));
-}
-
-void imp_float(va_list imp)
-{
-	printf("%f", (float)va_arg(imp, double));
-}
-
-void *imp_char(va_list imp)
-{
-	/*if (s == NULL)
-	{
-		printf("nil");
-	}*/
-	printf("%c", (char)va_arg(imp, string));
-}
-
-ft ar[] = {
-{"s", imp_char},
-{"i", imp_int},
-{"f", imp_float},
-{"s", *imp_char}	
-};
+/**
+ * print_all - that prints anything
+ * @format: variable const char *
+ *
+ * Return:
+ */
 
 void print_all(const char * const format, ...)
 {
-	int cont1 = 0, cont2 = 0;
+	va_list args;
+	va_start(args, fmt);
+	char* comma = "";
+	char* comma2 = ", ";
+	int i, c;
+	double d;
+	char *str;
 
-	va_list imp;
-	va_start(imp, format);
-
-	while (cont1 <= format)
+	while (*fmt != '\0')
 	{
-		while (cont2 <= 3)
+		printf("%s", comma);
+		switch(*fmt)
 		{
-			if (ar[cont2].s == format[cont1])
+		case 'i':
+			i = va_arg(args, int);
+			printf("%d", i);
+			break;
+		case 'c':
+			i = va_arg(args, int);
+			printf("%c", i);
+			break;
+		case 's':
+			str = va_arg(args, char *);
+			if (str == NULL)
 			{
-				return (ar[cont2].f);	
+				printf("(nil)");
 			}
-			cont2++;
+			if (str != NULL)
+			{
+				while(*str)
+				{
+					putchar(*str);
+					str++;
+				}
+			}
+			break;
+		case 'f':
+			d = va_arg(args, double);
+			printf("%f", d);
+			break;
+		case 'e':
+			++fmt;
+			comma = "";
+			continue;
+		default:
+			break;
 		}
-		cont1++;
+		comma = comma2;
+		++fmt;
 	}
-
+	printf("\n");
+	va_end(args);
 }
+
