@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
+void print_int(va_list args);
+void print_char(va_list args);
+void print_string(va_list args);
+void print_double(va_list args);
 /**
  * print_int - that prints integers
  * @args: va_list
