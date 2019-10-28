@@ -2,65 +2,96 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
+/**
+ * print_int - that prints integers
+ * @args: va_list
+ */
+void print_int(va_list args)
+{
+	int i;
+
+	i = va_arg(args, int);
+	printf("%d", i);
+}
+
+/**
+ * print_char - that prints characters
+ * @args: va_list
+ */
+void print_char(va_list args)
+{
+	int c;
+
+	c = va_arg(args, int);
+	printf("%c", c);
+}
+
+/**
+ * print_string - that prints strings
+ * @args: va_list
+ */
+void print_string(va_list args)
+{
+	char *str;
+
+	str = va_arg(args, char *);
+	if (str == NULL)
+		printf("(nil)");
+	if (str != NULL)
+		printf("%s", str);
+}
+
+/**
+ * print_double - that prints float
+ * @args: va_list
+ */
+void print_double(va_list args)
+{
+	double d;
+
+	d = va_arg(args, double);
+	printf("%f", d);
+}
 
 /**
  * print_all - that prints anything
  * @format: variable const char *
- *
- * Return:
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	va_start(args, fmt);
-	char* comma = "";
-	char* comma2 = ", ";
-	int i, c;
-	double d;
-	char *str;
+	char *comma = "";
+	char *comma2 = ", ";
+	int x = 0;
 
-	while (*fmt != '\0')
+	va_start(args, format);
+
+	while (format[x] != '\0')
 	{
 		printf("%s", comma);
-		switch(*fmt)
+		switch (format[x])
 		{
-		case 'i':
-			i = va_arg(args, int);
-			printf("%d", i);
-			break;
-		case 'c':
-			i = va_arg(args, int);
-			printf("%c", i);
-			break;
-		case 's':
-			str = va_arg(args, char *);
-			if (str == NULL)
-			{
-				printf("(nil)");
-			}
-			if (str != NULL)
-			{
-				while(*str)
-				{
-					putchar(*str);
-					str++;
-				}
-			}
-			break;
-		case 'f':
-			d = va_arg(args, double);
-			printf("%f", d);
-			break;
-		case 'e':
-			++fmt;
-			comma = "";
-			continue;
-		default:
+			case 'i':
+				print_int(args);
+				break;
+			case 'c':
+				print_char(args);
+				break;
+			case 's':
+				print_string(args);
+				break;
+			case 'f':
+				print_double(args);
+				break;
+			case 'e':
+				++x;
+				comma = "";
+				continue;
+			default:
 			break;
 		}
 		comma = comma2;
-		++fmt;
+		++x;
 	}
 	printf("\n");
 	va_end(args);
