@@ -6,6 +6,7 @@
 * delete_nodeint_at_index - that deletes the node at index index
 * @head: variable pointer to pointer
 * @index:  the index of the node that should be deleted. Index starts at 0
+* Description: Write a function that deletes the node at index
 * Return: 1 if it succeeded, -1 if it failed
 */
 
