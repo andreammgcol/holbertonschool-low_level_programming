@@ -6,6 +6,7 @@
 * *insert_nodeint_at_index - that inserts a new node at a given position
 * @head: variable pointer to pointer
 * @idx:  index of the list where the new node should be added
+* @n: integer
 * Description: Write a function that inserts a new node at a given position
 * Return: that inserts a new node at a given position
 */
