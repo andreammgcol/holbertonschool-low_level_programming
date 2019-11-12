@@ -3,10 +3,10 @@
 #include "holberton.h"
 
 /**
- * append_text_to_file - function that creates a file.
+ * append_text_to_file - that appends text at the end of a file
  * @filename: variable pointer
  * @text_content: content file
- * Description: Create a function that creates a file.
+ * Description: function that appends text at the end of a file
  * Return: 1 on success, -1 on failure
  */
 
