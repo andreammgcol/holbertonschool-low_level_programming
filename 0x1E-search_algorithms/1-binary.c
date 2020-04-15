@@ -19,7 +19,7 @@ int rec_binary_search(int *array, size_t index, size_t size, int value)
 		return (-1);
 
 	middle = index + (size - index - 1) / 2;
-	printf("Searching in array: ");
+	printf("Searching in array:");
 	separator = " ";
 	for (i = index; i < size; i++)
 	{
@@ -46,9 +46,20 @@ int rec_binary_search(int *array, size_t index, size_t size, int value)
 
 int binary_search(int *array, size_t size, int value)
 {
+	size_t index = 0, middle;
+
 	if (value == '\0' || array == NULL)
 		return (-1);
 
-	return (rec_binary_search(array, 0, size, value));
+	else
+	{
+		middle = size / 2;
+
+		if (array[middle] == value)
+			return (middle);
+
+		return (rec_binary_search(array, index, size, value));
+	}
+
 }
 
